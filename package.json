@@ -1,0 +1,20 @@
+{
+    "name": "facets-alive",
+    "version": "0.1.0",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "script": "npx tsx --env-file=.env ./src/script.ts",
+        "introspect": "drizzle-kit introspect"
+    },
+    "dependencies": {
+        "@types/node": "^22.1.0",
+        "drizzle-orm": "^0.32.2",
+        "postgres": "^3.4.4"
+    },
+    "devDependencies": {
+        "drizzle-kit": "^0.23.2",
+        "tsx": "^4.16.5",
+        "typescript": "^5.5.4"
+    }
+}
