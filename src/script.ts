@@ -5,9 +5,22 @@ import { user, note, color } from "../drizzle/schema";
 import randInt from "./randInt";
 import generateQuote from "./generator";
 
+// console assert existence of env variables, helpful for detecting this issue in docker
+console.assert(
+  process.env.DATABASE_URL ?? false,
+  "Env variable DATABASE_URL was not found."
+);
+console.assert(
+  process.env.DIRECT_URL ?? false,
+  "Env variable DIRECT_URL was not found."
+);
+console.assert(
+  process.env.API_NINJAS_KEY ?? false,
+  "Env variable DATABASE_URL was not found."
+);
+
 const connectionString = process.env.DATABASE_URL!;
 
-console.log("connecting to ", connectionString);
 const client = postgres(connectionString);
 const db = drizzle(client);
 
@@ -30,5 +43,6 @@ const newPost = await db.insert(note).values({
   userId: userWithUsernameAdmin.id,
 });
 
-console.log("closing connection.");
 await client.end();
+
+console.log("End Script.");
