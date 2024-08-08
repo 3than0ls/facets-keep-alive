@@ -8,7 +8,7 @@
         "script": "npx tsx ./src/index.ts",
         "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
         "introspect": "drizzle-kit introspect",
-        "docker_build": "docker build --platform linux/amd64 -t facets-create-next:latest ."
+        "docker_build": "docker build --platform linux/amd64 -t facets-keep-alive:latest ."
     },
     "dependencies": {
         "drizzle-orm": "^0.32.2",
