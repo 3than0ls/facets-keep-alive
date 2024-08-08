@@ -4,8 +4,9 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "script": "npx tsx --env-file=.env ./src/script.ts",
-        "no_env_script": "npx tsx ./src/script.ts",
+        "env_script": "npx tsx --env-file=.env ./src/index.ts",
+        "script": "npx tsx ./src/index.ts",
+        "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
         "introspect": "drizzle-kit introspect"
     },
     "dependencies": {
@@ -13,8 +14,10 @@
         "postgres": "^3.4.4"
     },
     "devDependencies": {
+        "@types/aws-lambda": "^8.10.143",
         "@types/node": "^22.1.0",
         "drizzle-kit": "^0.23.2",
+        "esbuild": "^0.23.0",
         "tsx": "^4.16.5",
         "typescript": "^5.5.4"
     }
