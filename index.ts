@@ -27,7 +27,7 @@ export const handler = async () => {
   await db.insert(note).values({
     positionX: randInt(-4000, 4000),
     positionY: randInt(-4000, 4000),
-    text: `${quote.slice(0, 500)}}`,
+    text: `${quote.slice(0, 500)}`,
     title: `Quote from ${author.slice(0, 40)}`,
     color: color.enumValues[randInt(0, 4)],
     userId: userWithUsernameAdmin.id,
